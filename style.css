@@ -1,0 +1,121 @@
+body {
+    background: url(images/softball-home-plate-20198058.jpg) no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+h1 {
+    background: url(images/white%20on%20homePlate.jpg) no-repeat;
+    background-size: cover;
+    text-align: center;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    font-size: 3em;
+    margin: 30px -8px;
+    text-shadow: 0px 0px 5px white;
+    box-shadow: 0px 3px 10px;
+}
+
+h1 b {
+    font-size: 1.4em
+}
+
+h1 img {
+    box-shadow: 0px 4px 5px;
+    background: white;
+    padding: 5px;
+    border-radius: 10px
+}
+
+.cleats-hover {
+    display: inline-block;
+    transition: width 1s, height 1s;
+}
+
+.cleats-hover:hover {
+    width: 130px;
+    height: 120px;
+}
+
+.stock-check {
+    text-align: center;
+    background: rgba(200, 200, 200, 0.3);
+}
+
+h2 {
+    text-shadow: 0px 0px 5px white;
+}
+
+.brand, .size, .color {
+    background: rgba(255, 255, 0, 0.3);
+    text-transform: uppercase;
+    font-size: 1.1em;
+    padding: 5px;
+    color: black;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px;
+}
+
+.check-btn {
+    font-size: 1em;
+    margin: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.check-btn:hover {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+h3 {
+    text-align: center;
+    font-size: 1.5em;
+    text-shadow: 0px 0px 5px white;
+    background: rgba(255, 255, 255, 0.4);
+    padding: 10px;
+    margin: 10px;
+}
+
+.btn {
+    text-align: center;
+}
+
+.show-all-stock-btn, .hide-all-stock-btn {
+    font-size: 1.3em;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.3), rgba(255, 255, 0, 0.3));
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px;
+    
+}
+
+.show-all-stock-btn:hover, .hide-all-stock-btn:hover {
+    background: linear-gradient(180deg, rgba(255, 255, 0, 0.3), rgba(0, 0, 0, 0.3));
+}
+
+table {
+    width: 90%;
+}
+
+th {
+    background: #888;
+    padding: 5px
+}
+
+td {
+    padding: 10px;
+}
+
+footer {
+    margin-top: 10px;
+    font-family: cursive;
+    text-align: center;
+    clear: both;
+}
+
+#logo {
+    border-radius: 2em;
+    box-shadow: 0px 0px 6px black;
+}
+
+
