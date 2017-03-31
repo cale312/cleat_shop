@@ -5,7 +5,7 @@
     <title>Softball Cleats Catalogue</title>
     <head>
         <header>
-            <h1>Play Ball&trade;<br/> <b>Softball/Baseball Cleat Shop</b><br/>
+            <h1><div class="play-ball-header">Play Ball&trade;<br/> <b>Softball/Baseball Cleat Shop</b></div><br/>
                 <div class="Cleats">
                     <img class="cleats" src="images/nike-white-cleats.jpeg" width="350" height="250">
                     <img class="cleats" src="images/Bkue%20Mizuno.jpg" width="350" height="250">
@@ -14,11 +14,11 @@
                     <img class="cleats" src="images/Under%20Armor%20Blue.jpg" width="350" height="250">
                 </div>
                 <div class="cleats-inline-block">
-                    <img class="cleats-hover" src="images/nike-white-cleats.jpeg" width="90" height="80">
-                    <img class="cleats-hover" src="images/Bkue%20Mizuno.jpg" width="90" height="80">
-                    <img class="cleats-hover" src="images/s-l225.jpg" width="90" height="80">
-                    <img class="cleats-hover" src="images/320441_BLK_WHT.jpg" width="90" height="80">
-                    <img class="cleats-hover" src="images/Under%20Armor%20Blue.jpg" width="90" height="80">
+                    <img class="cleats-hover" src="images/nike-white-cleats.jpeg" title="Nike" width="90" height="80">
+                    <img class="cleats-hover" src="images/Bkue%20Mizuno.jpg" title="Mizuno" width="90" height="80">
+                    <img class="cleats-hover" src="images/s-l225.jpg" title="Adidas" width="90" height="80">
+                    <img class="cleats-hover" src="images/320441_BLK_WHT.jpg" title="Mizuno" width="90" height="80">
+                    <img class="cleats-hover" src="images/Under%20Armor%20Blue.jpg" title="Under Armor" width="90" height="80">
                 </div>
             </h1>
         </header>
@@ -29,26 +29,26 @@
         <div class="stock-check">
             <h2>Which brand are you looking for</h2>
             <select class="brand">
-                <option class="adidas">Adidas</option>
-                <option class="mizuno">Mizuno</option>
-                <option class="nb">New Balance</option>
-                <option class="nike">Nike</option>
-                <option class="underA">Under Armor</option>
+                <option class="brandList">Adidas</option>
+                <option class="brandList">Mizuno</option>
+                <option class="brandList">New Balance</option>
+                <option class="brandList">Nike</option>
+                <option class="brandList">Under Armor</option>
             </select>
             <h2>Which size are you looking for</h2>
             <select class="size">
-                <option class="size6">US/6</option>
-                <option class="size7">US/7</option>
-                <option class="size8">US/8</option>
-                <option class="size9">US/9</option>
-                <option class="size10">US/10</option>
+                <option class="sizeList">US/6</option>
+                <option class="sizeList">US/7</option>
+                <option class="sizeList">US/8</option>
+                <option class="sizeList">US/9</option>
+                <option class="sizeList">US/10</option>
             </select>
             <h2>What color do you prefer</h2>
             <select class="color">
-                <option class="blue">Blue</option>
-                <option class="black">Black</option>
-                <option class="red">Red</option>
-                <option class="white">White</option>
+                <option class="colorList">Blue</option>
+                <option class="colorList">Black</option>
+                <option class="colorList">Red</option>
+                <option class="colorList">White</option>
             </select>
             <br/>
             <input class="check-btn" type="button" value="CHECK">
@@ -57,14 +57,33 @@
         <br/>
         <br/>
         <div class="btn">
-            <input class="show-all-stock-btn" type="button" value="Show All Stock">
+            <input class="show-all-stock-btn" type="button" value="See All Stock">
             <input class="hide-all-stock-btn" type="button" value="Hide Stock">
+            <br/>
+            <br/>
+            <input class="add-stock-btn" type="button" value="Add Stock">
+            
+            <div class="stock-adder">
+                <input class="close-btn" type="button" value="X">
+                <h4>Enter Brand below</h4>
+                <input class="add-brand" type="text" placeholder="Brand">
+                <h4>Enter the size below</h4>
+                <input class="add-size" type="text" placeholder="Size">
+                <h4>Enter the color below</h4>
+                <input class="add-color" type="text" placeholder="Color">
+                <h4>How much stock you want to add</h4>
+                <input class="add-stock" type="text" placeholder="Stock Number">
+                <h4>How much is each pair</h4>
+                <input class="add-price" type="text" placeholder="Price">
+                <br/>
+                <br/>
+                <input type="button" class="add-btn" value="Add">
+            </div>
         </div>
         <div class="all-cleats-in-stock"></div>
     </body>
     
     <script class="template" type="text/x-handlebars">
-    
         <h3>
             <table border="2" align="center">
                 <th>Brand</th>
@@ -81,7 +100,6 @@
                 </tr>
             </table>
         </h3>
-    
     </script>
     
     <script class="myTemplate" type="text/x-handlebars">
@@ -92,7 +110,7 @@
                 <th>Size</th>
                 <th>Stock</th>
                 <th>Price</th>
-                    {{#each cleatsList}}
+                {{#each list}}
                 <tr>
                     <td>{{brand}}</td>
                     <td>{{color}}</td>
@@ -100,7 +118,7 @@
                     <td>{{stock}}</td>
                     <td>{{price}}</td>
                 </tr>
-                    {{/each}}
+                {{/each}}
             </table>
         </h3>
     </script>
