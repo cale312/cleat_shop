@@ -1,34 +1,38 @@
-document.querySelector('.stock-info').innerHTML = localStorage.getItem('stock-info');
+//document.querySelector('.stock-info').innerHTML = localStorage.getItem('stock-info');
 
 var brandSelector = document.querySelector('.brand');
 var sizeSelector = document.querySelector('.size');
 var colorSelector = document.querySelector('.color');
 
-var adidas = document.querySelector('.adidas');
-var mizuno = document.querySelector('.mizuno');
-var newBlnc = document.querySelector('.nb');
-var nike = document.querySelector('.nike');
-var underA = document.querySelector('.underA');
+var brandList = document.getElementsByClassName('brandList');
 
-var size6 = document.querySelector('.size6');
-var size7 = document.querySelector('.size7');
-var size8 = document.querySelector('.size8');
-var size9 = document.querySelector('.size9');
-var size10 = document.querySelector('.size10');
+var sizeList = document.getElementsByClassName('sizeList');
 
-var black = document.querySelector('.black');
-var blue = document.querySelector('.blue');
-var red = document.querySelector('.red');
-var white = document.querySelector('.white');
+var colorList = document.getElementsByClassName('colorList');
 
-//alert(adidas.textContent);
-//alert(size6.textContent);
-//alert(black.textContent);
+var addBrand = document.querySelector('.add-brand');
+var addSize = document.querySelector('.add-size');
+var addColor = document.querySelector('.add-color');
+var addStock = document.querySelector('.add-stock');
+var addPrice = document.querySelector('.add-price');
+
+var cleatsList = [
+        {brand: 'Adidas', stock: '28', price: 'R2 000', color:'Red', size: 'US/7'},
+        {brand: 'Adidas', stock: '50', price: 'R2 500', color: 'White', size: 'US/10'},
+        {brand: 'Mizuno', stock: '50', price: 'R3 500', color: 'Blue', size: 'US/9'},
+        {brand: 'Mizuno', stock: '32', price: 'R3 000', color: 'Black', size: 'US/7'},
+        {brand: 'New Balance', stock: '90', price: 'R1 000', color: 'Blue', size: 'US/6'},
+        {brand: 'New Balance', stock: '76', price: 'R1 500', color: 'White', size: 'US/8'},
+        {brand: 'Nike', stock: '35', price: 'R3 900', color: 'Black', size: 'US/10'},
+        {brand: 'Nike', stock: '76', price: 'R3 900', color: 'Red', size: 'US/10'},
+        {brand: 'Under Armor', stock: '58', price: 'R5 700', color: 'White', size: 'US/6'},
+        {brand: 'Under Armor', stock: '67', price: 'R5 000', color: 'Blue', size: 'US/7'}
+    ]
+
+var addedStock = [];
 
 var slideIndex = 0;
 slide();
-
-//alert(Handlebars);
 
 function slide() {
     'use strict';
@@ -48,60 +52,51 @@ document.querySelector('.check-btn').addEventListener('click', function () {
     
     var template = Handlebars.compile(myTemplate);
     
-    var redAdidas = template({brand: 'Adidas', stock: '28', price: 'R2 000', color:'Red', size: 'US/7'});
-    var whiteAdidas = template({brand: 'Adidas', stock: '50', price: 'R2 500', color: 'White', size: 'US/10'});
-    var blackMizuno = template({brand: 'Mizuno', stock: '32', price: 'R3 000', color: 'Black', size: 'US/7'});
-    var blueMizuno = template({brand: 'Mizuno', stock: '50', price: 'R3 500', color: 'Blue', size: 'US/9'});
-    var blueNewBalance = template({brand: 'New Balance', stock: '90', price: 'R1 000', color: 'Blue', size: 'US/6'});
-    var whiteNewBalance = template({brand: 'New Balance', stock: '76', price: 'R1 500', color: 'White', size: 'US/8'});
-    var blackNike = template({brand: 'Nike', stock: '35', price: 'R3 900', color: 'Black', size: 'US/10'});
-    var redNike = template({brand: 'Nike', stock: '76', price: 'R3 900', color: 'Red', size: 'US/10'});
-    var whiteUnderA = template({brand: 'Under Armor', stock: '58', price: 'R5 000', color: 'White', size: 'US/6'});
-    var blueUnderA = template({brand: 'Under Armor', stock: '67', price: 'R5 700', color: 'Blue', size: 'US/7'});
-    
-    if (brandSelector.value === adidas.textContent && sizeSelector.value === size7.textContent && colorSelector.value === red.textContent) {
+    if (brandSelector.value === brandList[0].textContent && sizeSelector.value === sizeList[1].textContent && colorSelector.value === colorList[2].textContent) {
         
-        document.querySelector('.stock-info').innerHTML = redAdidas;
+        document.querySelector('.stock-info').innerHTML = template(cleatsList[0]);
         
-    } else if (brandSelector.value === adidas.textContent && sizeSelector.value === size10.textContent && colorSelector.value === white.textContent) {
+    } else if (brandSelector.value === brandList[0].textContent && sizeSelector.value === sizeList[4].textContent && colorSelector.value === colorList[3].textContent) {
         
-        document.querySelector('.stock-info').innerHTML = whiteAdidas;
+        document.querySelector('.stock-info').innerHTML = template(cleatsList[1]);
         
-    } else if (brandSelector.value === mizuno.textContent && sizeSelector.value === size9.value && colorSelector.value === blue.textContent) {
+    } else if (brandSelector.value === brandList[1].textContent&& sizeSelector.value === sizeList[3].textContent && colorSelector.value === colorList[0].textContent) {
         
-        document.querySelector('.stock-info').innerHTML = blueMizuno;
+        document.querySelector('.stock-info').innerHTML = template(cleatsList[2]);
         
-    } else if (brandSelector.value === mizuno.textContent && sizeSelector.value === size7.value && colorSelector.value === black.textContent) {
+    } else if (brandSelector.value === brandList[1].textContent && sizeSelector.value === sizeList[1].textContent && colorSelector.value === colorList[1].textContent) {
         
-        document.querySelector('.stock-info').innerHTML = blackMizuno;
+        document.querySelector('.stock-info').innerHTML = template(cleatsList[3]);
         
-    } else if (brandSelector.value === newBlnc.textContent && sizeSelector.value === size6.textContent && colorSelector.value === blue.textContent) {
+    } else if (brandSelector.value === brandList[2].textContent && sizeSelector.value === sizeList[0].textContent && colorSelector.value === colorList[0].textContent) {
         
-        document.querySelector('.stock-info').innerHTML = blueNewBalance;
+        document.querySelector('.stock-info').innerHTML = template(cleatsList[4]);
         
-    } else if (brandSelector.value === newBlnc.textContent && sizeSelector.value == size8.textContent && colorSelector.value === white.textContent) {
+    } else if (brandSelector.value === brandList[2].textContent && sizeSelector.value == sizeList[2].textContent && colorSelector.value === colorList[3].textContent) {
         
-        document.querySelector('.stock-info').innerHTML = whiteNewBalance;
+        document.querySelector('.stock-info').innerHTML = template(cleatsList[5]);
         
-    } else if (brandSelector.value === nike.textContent && sizeSelector.value === size10.textContent && colorSelector.value === black.textContent) {
+    } else if (brandSelector.value === brandList[3].textContent && sizeSelector.value === sizeList[4].textContent && colorSelector.value === colorList[1].textContent) {
         
-        document.querySelector('.stock-info').innerHTML = blackNike;
+        document.querySelector('.stock-info').innerHTML = template(cleatsList[6]);
         
-    } else if (brandSelector.value === nike.textContent && sizeSelector.value === size10.textContent && colorSelector.value === red.textContent) {
+    } else if (brandSelector.value === brandList[3].textContent && sizeSelector.value === sizeList[4].textContent && colorSelector.value === colorList[2].textContent) {
         
-        document.querySelector('.stock-info').innerHTML = redNike;
+        document.querySelector('.stock-info').innerHTML = template(cleatsList[7]);
         
-    } else if (brandSelector.value === underA.textContent && sizeSelector.value === size6.textContent && colorSelector.value === white.textContent) {
+    } else if (brandSelector.value === brandList[4].textContent && sizeSelector.value === sizeList[0].textContent && colorSelector.value === colorList[3].textContent) {
         
-        document.querySelector('.stock-info').innerHTML = whiteUnderA;
-    } else if (brandSelector.value === underA.textContent && sizeSelector.value === size7.textContent && colorSelector.value === blue.textContent) {
+        document.querySelector('.stock-info').innerHTML = template(cleatsList[8]);
         
-        document.querySelector('.stock-info').innerHTML = blueUnderA;
+    } else if (brandSelector.value === brandList[4].textContent && sizeSelector.value === sizeList[1].textContent && colorSelector.value === colorList[0].textContent) {
+        
+        document.querySelector('.stock-info').innerHTML = template(cleatsList[9]);
+        
     } else {
         document.querySelector('.stock-info').innerHTML = '<h3>Sorry, we currently do not have those in storage!</h3>'
     }
     
-    localStorage.setItem('stock-info', document.querySelector('.stock-info').innerHTML);
+//    localStorage.setItem('stock-info', document.querySelector('.stock-info').innerHTML);
 });
 
 document.querySelector('.show-all-stock-btn').addEventListener('click', function () {
@@ -109,24 +104,46 @@ document.querySelector('.show-all-stock-btn').addEventListener('click', function
     
     var template = Handlebars.compile(myTemplate);
     
-    var data = template({
-        cleatsList: [
-            {brand: 'Adidas', stock: '28', price: 'R2 000', color:'Red', size: 'US/7'},
-            {brand: 'Adidas', stock: '50', price: 'R2 500', color: 'White', size: 'US/10'},
-            {brand: 'Mizuno', stock: '32', price: 'R3 000', color: 'Black', size: 'US/7'},
-            {brand: 'Mizuno', stock: '50', price: 'R3 500', color: 'Blue', size: 'US/9'},
-            {brand: 'New Balance', stock: '90', price: 'R1 000', color: 'Blue', size: 'US/6'},
-            {brand: 'New Balance', stock: '76', price: 'R1 500', color: 'White', size: 'US/8'},
-            {brand: 'Nike', stock: '35', price: 'R3 900', color: 'Black', size: 'US/10'},
-            {brand: 'Nike', stock: '76', price: 'R3 900', color: 'Red', size: 'US/10'},
-            {brand: 'Under Armor', stock: '58', price: 'R5 700', color: 'White', size: 'US/6'},
-            {brand: 'Under Armor', stock: '67', price: 'R5 000', color: 'Blue', size: 'US/7'}
-        ]
-    });
-    
-    document.querySelector('.all-cleats-in-stock').innerHTML = data;
+    var cleats = {list: cleatsList}
+        
+    document.querySelector('.all-cleats-in-stock').innerHTML = template(cleats);
+    document.querySelector('.all-cleats-in-stock').style.display = 'block';
 });
 
 document.querySelector('.hide-all-stock-btn').addEventListener('click', function () {
    document.querySelector('.all-cleats-in-stock').style.display = 'none'; 
+});
+
+document.querySelector('.close-btn').addEventListener('click', function () {
+//    alert('tester');
+    document.querySelector('.stock-adder').style.display = 'none';
+});
+
+document.querySelector('.add-stock-btn').addEventListener('click', function () {
+    document.querySelector('.stock-adder').style.display = 'block';
+});
+
+document.querySelector('.add-btn').addEventListener('click', function () {
+    var newStock = {brand: addBrand.value, size: addSize.value, stock: addStock.value, price: addPrice.value, color: addColor.value};
+    addedStock = newStock;
+//    alert(addedStock);
+    cleatsList.push(addedStock);
+//    alert(JSON.stringify(cleatsList));
+    newBrand = document.createElement('option');
+    newSize = document.createElement('option');
+    newColor = document.createElement('option');
+    newStockN = document.createElement('option');
+    newPrice = document.createElement('option');
+    
+    brandText = document.createTextNode(addBrand.value);
+    sizeText = document.createTextNode(addSize.value);
+    colorText = document.createTextNode(addColor.value);
+    stockText = document.createTextNode(addStock.value);
+    priceText = document.createTextNode(addPrice.value);
+    
+    newBrand.appendChild(brandText);
+    newSize.appendChild(sizeText);
+    newColor.appendChild(colorText);
+    newStockN.appendChild(stockText);
+    newPrice.appendChild(priceText);
 });
