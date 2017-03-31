@@ -17,7 +17,7 @@ var addStock = document.querySelector('.add-stock');
 var addPrice = document.querySelector('.add-price');
 
 var cleatsList = [
-        {brand: 'Adidas', stock: '28', price: 'R2 000', color:'Red', size: 'US/7'},
+        {brand: 'Adidas', stock: '28', price: 'R2 000', color: 'Red', size: 'US/7'},
         {brand: 'Adidas', stock: '50', price: 'R2 500', color: 'White', size: 'US/10'},
         {brand: 'Mizuno', stock: '50', price: 'R3 500', color: 'Blue', size: 'US/9'},
         {brand: 'Mizuno', stock: '32', price: 'R3 000', color: 'Black', size: 'US/7'},
@@ -27,7 +27,7 @@ var cleatsList = [
         {brand: 'Nike', stock: '76', price: 'R3 900', color: 'Red', size: 'US/10'},
         {brand: 'Under Armor', stock: '58', price: 'R5 700', color: 'White', size: 'US/6'},
         {brand: 'Under Armor', stock: '67', price: 'R5 000', color: 'Blue', size: 'US/7'}
-    ]
+    ];
 
 var addedStock = [];
 
@@ -124,26 +124,34 @@ document.querySelector('.add-stock-btn').addEventListener('click', function () {
 });
 
 document.querySelector('.add-btn').addEventListener('click', function () {
-    var newStock = {brand: addBrand.value, size: addSize.value, stock: addStock.value, price: addPrice.value, color: addColor.value};
-    addedStock = newStock;
+    if (addBrand.value !== "" && addSize.value !== "" && addStock.value !== "" && addColor.value !== "" && addPrice.value !== "") {
+        var newStock = {brand: addBrand.value, size: addSize.value, stock: addStock.value, price: addPrice.value, color: addColor.value};
+        addedStock = newStock;
 //    alert(addedStock);
-    cleatsList.push(addedStock);
+        cleatsList.push(addedStock);
 //    alert(JSON.stringify(cleatsList));
-    newBrand = document.createElement('option');
-    newSize = document.createElement('option');
-    newColor = document.createElement('option');
-    newStockN = document.createElement('option');
-    newPrice = document.createElement('option');
+        newBrand = document.createElement('option');
+        newSize = document.createElement('option');
+        newColor = document.createElement('option');
+        newStockN = document.createElement('option');
+        newPrice = document.createElement('option');
     
-    brandText = document.createTextNode(addBrand.value);
-    sizeText = document.createTextNode(addSize.value);
-    colorText = document.createTextNode(addColor.value);
-    stockText = document.createTextNode(addStock.value);
-    priceText = document.createTextNode(addPrice.value);
+        brandText = document.createTextNode(addBrand.value);
+        sizeText = document.createTextNode(addSize.value);
+        colorText = document.createTextNode(addColor.value);
+        stockText = document.createTextNode(addStock.value);
+        priceText = document.createTextNode(addPrice.value);
     
-    newBrand.appendChild(brandText);
-    newSize.appendChild(sizeText);
-    newColor.appendChild(colorText);
-    newStockN.appendChild(stockText);
-    newPrice.appendChild(priceText);
+        newBrand.appendChild(brandText);
+        newSize.appendChild(sizeText);
+        newColor.appendChild(colorText);
+        newStockN.appendChild(stockText);
+        newPrice.appendChild(priceText);
+        
+        brandSelector.appendChild(newBrand);
+        sizeSelector.appendChild(newBrand);
+        colorSelector.appendChild(newBrand);
+    } else {
+        alert('Error')
+    }
 });
