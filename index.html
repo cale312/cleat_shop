@@ -1,134 +1,189 @@
 <!Doctype html>
 <html>
     <link href="style.css" rel="stylesheet" type="text/css">
+    <title>Play Ball!</title>
+    <link rel="icon" href="images/mlb%20logo.png">
     <script src="handlebars-v4.0.5.js"></script>
-    <title>Softball Cleats Catalogue</title>
+    
     <head>
-        <header>
-            <h1><div class="play-ball-header">Play Ball&trade;<br/> <b>Softball/Baseball Cleat Shop</b></div><br/>
-                <div class="Cleats">
-                    <img class="cleats" src="images/nike-white-cleats.jpeg" width="350" height="250">
-                    <img class="cleats" src="images/Bkue%20Mizuno.jpg" width="350" height="250">
-                    <img class="cleats" src="images/s-l225.jpg" width="350" height="250">
-                    <img class="cleats" src="images/320441_BLK_WHT.jpg" width="350" height="250">
-                    <img class="cleats" src="images/Under%20Armor%20Blue.jpg" width="350" height="250">
-                </div>
-                <div class="cleats-inline-block">
+        <header class="header">
+            <h1><div class="play-ball">Play Ball&trade;<br/></div><b>Softball &amp; Baseball Cleat Shop</b>
+                <br/>
+                <div class="cleats">
+                    <a target="_blank" href="images/Black%20Nike.jpg">
+                    <img class="cleats-hover" src="images/Black%20Nike.jpg" title="Nike" width="90" height="80">
+                    </a>
+                    <a target="_blank" href="images/Blue%20New%20Balannce.jpg">
+                    <img class="cleats-hover" src="images/Blue%20New%20Balannce.jpg" title="New Balance" width="90" height="80">
+                    </a>
+                    <a target="_blank" href="images/nike-white-cleats.jpeg">
                     <img class="cleats-hover" src="images/nike-white-cleats.jpeg" title="Nike" width="90" height="80">
+                    </a>
+                    <a target="_blank" href="images/Bkue%20Mizuno.jpg">
                     <img class="cleats-hover" src="images/Bkue%20Mizuno.jpg" title="Mizuno" width="90" height="80">
+                    </a>
+                    <a target="_blank" href="images/s-l225.jpg">
                     <img class="cleats-hover" src="images/s-l225.jpg" title="Adidas" width="90" height="80">
+                    </a>
+                    <a target="_blank" href="images/320441_BLK_WHT.jpg">
                     <img class="cleats-hover" src="images/320441_BLK_WHT.jpg" title="Mizuno" width="90" height="80">
+                    </a>
+                    <a target="_blank" href="images/Under%20Armor%20Blue.jpg">
                     <img class="cleats-hover" src="images/Under%20Armor%20Blue.jpg" title="Under Armor" width="90" height="80">
+                    </a>
+                    <a target="_blank" href="images/Black%20on%20white%20miuzuno.jpg">
+                    <img class="cleats-hover" src="images/Black%20on%20white%20miuzuno.jpg" title="Mizuno" width="90" height="80">
+                    </a>
                 </div>
             </h1>
         </header>
-        
     </head>
     
     <body>
-        <div class="stock-check">
-            <h2>Which brand are you looking for</h2>
-            <select class="brand">
-                <option class="brandList">Adidas</option>
-                <option class="brandList">Mizuno</option>
-                <option class="brandList">New Balance</option>
-                <option class="brandList">Nike</option>
-                <option class="brandList">Under Armor</option>
-            </select>
-            <h2>Which size are you looking for</h2>
-            <select class="size">
-                <option class="sizeList">US/6</option>
-                <option class="sizeList">US/7</option>
-                <option class="sizeList">US/8</option>
-                <option class="sizeList">US/9</option>
-                <option class="sizeList">US/10</option>
-            </select>
-            <h2>What color do you prefer</h2>
-            <select class="color">
-                <option class="colorList">Blue</option>
-                <option class="colorList">Black</option>
-                <option class="colorList">Red</option>
-                <option class="colorList">White</option>
-            </select>
-            <br/>
-            <input class="check-btn" type="button" value="CHECK">
-        </div>
-        <div class="stock-info"></div>
+        <div class="stock-checker"></div>
+        <br/>
+        <input type="button" value="SEARCH!" class="search-btn">
         <br/>
         <br/>
-        <div class="btn">
-            <input class="show-all-stock-btn" type="button" value="See All Stock">
-            <input class="hide-all-stock-btn" type="button" value="Hide Stock">
+        <input class="show-stock-btn" type="button" value="Show All Stock">
+        <input class="hide-table-btn" type="button" value="X">
+        <br/>
+        <div class="searched-stock-display"></div>
+        <br/>
+        <div class="display-all-stock"></div>
+        <br/>
+        <br/>
+        <input type="button" value="Update Stock" class="update-btn">
+        <br/>
+        <br/>
+        <div class="admin-login">
+            <h4>Admin Login</h4>
+            <input class="close-admin-btn" type="button" value="X">
             <br/>
             <br/>
-            <input class="add-stock-btn" type="button" value="Add Stock">
-            
-            <div class="stock-adder">
-                <input class="close-btn" type="button" value="X">
-                <h4>Enter Brand below</h4>
-                <input class="add-brand" type="text" placeholder="Brand">
-                <h4>Enter the size below</h4>
-                <input class="add-size" type="text" placeholder="Size">
-                <h4>Enter the color below</h4>
-                <input class="add-color" type="text" placeholder="Color">
-                <h4>How much stock you want to add</h4>
-                <input class="add-stock" type="text" placeholder="Stock Number">
-                <h4>How much is each pair</h4>
-                <input class="add-price" type="text" placeholder="Price">
-                <br/>
-                <br/>
-                <input type="button" class="add-btn" value="Add">
-            </div>
+            <input class="usrname-text" type="text" placeholder="username">
+            <br/>
+            <br/>
+            <input class="pswd-text" type="password" placeholder="password">
+            <br/>
+            <div class="error-msg" style="color: red; text-shadow: 0px 0px 5px black"></div>
+            <br/>
+            <input class="login-btn" type="button" value="Login">
+            <input class="add-admin-btn" type="button" value="Add Staff">
         </div>
-        <div class="all-cleats-in-stock"></div>
+        <br/>
+        <br/>
+        <div class="add-admin">
+            <input class="close-staff-adder" type="button" value="X">
+            <br/>
+            <br/>
+            <h4 class="staff-header">Add Staff</h4>
+            <br/>
+            <br/>
+            <input class="new-username" type="text" placeholder="username" style="text-align: center">
+            <input class="new-password" type="password" placeholder="password" style="text-align: center">
+            <br/>
+            <br/>
+            <input class="add-staff-btn" type="button" value="Add">
+        </div>
+        <br/>
+        <br/>
+        <div class="stock-adder">
+            <h4>Add New Stock</h4>
+            <input type="button" value="X" class="close-btn">
+            <h2>Enter Brand Name</h2>
+            <input class="brandAdd" type="text" placeholder="Brand">
+            <h2>Enter Size</h2>
+            <input class="sizeAdd" type="text" placeholder="Size (US/)">
+            <h2>Enter Color</h2>
+            <input class="colorAdd" type="text" placeholder="Color">
+            <h2>Enter Amount of stock</h2>
+            <input class="stockAdd" type="text" placeholder="Stock Number">
+            <h2>Enter Price</h2>
+            <input class="priceAdd" type="text" placeholder="Price (R)">
+            <br/>
+            <br/>
+            <input class="add-btn" type="button" value="ADD">
+        </div>
     </body>
     
-    <script class="template" type="text/x-handlebars">
-        <h3>
-            <table border="2" align="center">
+    <script class="drop-down-template" type="text/x-handlebars">
+        <h2 style="text-decoration: underline">Find What You Are Looking For:</h2>
+        <h3>Select Brand :</h3>
+        <select class="brand">
+            {{#each list}}
+            <option class="{{brand}}">{{brand}}</option>
+            {{/each}}
+        </select>
+        <br/>
+        <br/>
+        <h3>Select Size :</h3>
+        <select class="size">
+            {{#each list}}
+            <option class="{{size}}">{{size}}</option>
+            {{/each}}
+        </select>
+        <br/>
+        <br/>
+        <h3>Select Color :</h3>
+        <select  class="color">
+            {{#each list}}
+            <option class="{{color}}">{{color}}</option>
+            {{/each}}
+        </select>
+        <br/>
+        <br/>
+    </script>
+    <script class="search-template" type="text/x-handlebars">
+        <h2 class="display-header">Stock Available</h2>
+        <table align="center"c>
+            <tr>
                 <th>Brand</th>
-                <th>Color</th>
                 <th>Size</th>
+                <th>Color</th>
                 <th>Stock</th>
                 <th>Price</th>
-                <tr>
-                    <td>{{brand}}</td>
-                    <td>{{color}}</td>
-                    <td>{{size}}</td>
-                    <td>{{stock}}</td>
-                    <td>{{price}}</td>
-                </tr>
-            </table>
-        </h3>
+            </tr>
+            <tr>
+                <td>{{brand}}</td>
+                <td>{{size}}</td>
+                <td>{{color}}</td>
+                <td>{{stock}}</td>
+                <td>{{price}}</td>
+            </tr>
+        </table>
     </script>
-    
-    <script class="myTemplate" type="text/x-handlebars">
-        <h3>
-            <table border="2" align="center">
+    <script class="show-stock-template" type="text/x-handlebars">
+        <table align="center" border="1">
+            <tr>
                 <th>Brand</th>
-                <th>Color</th>
                 <th>Size</th>
+                <th>Color</th>
                 <th>Stock</th>
                 <th>Price</th>
-                {{#each list}}
-                <tr>
-                    <td>{{brand}}</td>
-                    <td>{{color}}</td>
-                    <td>{{size}}</td>
-                    <td>{{stock}}</td>
-                    <td>{{price}}</td>
-                </tr>
-                {{/each}}
-            </table>
-        </h3>
+            </tr>
+            {{#each list}}
+            <tr>
+                <td>{{brand}}</td>
+                <td>{{size}}</td>
+                <td>{{color}}</td>
+                <td>{{stock}}</td>
+                <td>{{price}}</td>
+            </tr>
+            {{/each}}
+        </table>
     </script>
     
-    <footer>&copy; codeX 2017<br/>site By: Zikisa Cale Sogaxa<br/><a href="https://www.facebook.com/caleArts/" target="_blank"><img id="logo" src="images/Logo.jpg" title="caleOasin" width="50" height="50"></a>
+    <script src="app.js"></script>
     <br/>
-    <a href="https://www.instagram.com/sogaxa_zikisa/" target="_blank"><img src="images/Instagram-PNG-File.png" width="40" title="@zikisa_sogaxa" height="40"/></a>
-    <a href="https://www.facebook.com/cale.oasin.5" target="_blank"><img src="images/Facebook-Transparent.png" title="zikisa cale sogaxa" width="40" height="40"/></a>
+    <br/>
+    <footer class="home-footer">
+        <div class="footer-content">
+            &copy; codeX 2017<br/>site By: Zikisa Cale Sogaxa<br/><a href="https://www.facebook.com/caleArts/" target="_blank"><img id="logo" src="images/logo.jpg" title="caleOasin" width="50" height="50"></a>
+            <br/>
+            <a class="instagram-icon" href="https://www.instagram.com/sogaxa_zikisa/" target="_blank"><img src = "images/Instagram-PNG-File.png" width="40" title="@zikisa_sogaxa" height="40"/></a>
+            <a href="https://www.facebook.com/sogaxacale" target="_blank"><img src="images/Facebook-Transparent.png" title="zikisa cale sogaxa" width="40" height="40"/></a>
+            <a href="https://www.linkedin.com/in/zikisacalesogaxa/" target="_blank"><img src="images/Linkedin.png" title="zikisa cale sogaxa" width="40" height="40"></a>
+        </div>
     </footer>
-    
-    <script src="app.js" charset="utf-8"></script>
-    
 </html>
